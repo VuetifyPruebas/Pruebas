@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipo Documento</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9g89ba[1411NQApFmC26EWAOH8WGZ15MYYxFfc+NcPb1dKG37SK" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <link rel="stylesheet" href="assets/estilos.css">
+</head>
+
+<body>
+    <div id="app">
+       
+        <div class="container">
+            <h1>Tipos de Documento</h1>
+            <div class="row">
+                <div class="col-8">
+                    <div class="contenedors">
+                        <div class="contenedor" v-for="TipoDocumento in TipoDocumentos" :key="TipoDocumento.idTipoDocumento">
+                            <h3>{{TipoDocumento.idTipoDocumento}} </h3>
+                            <p>{{TipoDocumento.denominacionTipoDocumento}} </p>
+                            <button class="btn btn-block btn-danger"
+                                v-on:click="ClickEliminar(TipoDocumento.idTipoDocumento)">Eliminar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form-group">
+                        <label for="TipoD">Tipo de Documento</label>
+                        <input type="text" name="TipoD" id="TipoD" v-model="newTipD.denominacionTipoDocumento">
+                    </div>
+                    <input type="button" value="Crear" class="btn btn-block btn-info" v-on:click="sendTD">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/JS/TipoDoc.js"></script>
+</body>
+
+</html>
